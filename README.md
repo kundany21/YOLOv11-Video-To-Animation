@@ -1,12 +1,12 @@
 Warning: This small Python script for video-to-3D animation is highly experimental and extremely buggy. No bug fixes are planned. Proceed at your own risk.
-This Python script implements a basic pipeline for vision-based human pose estimation and rudimentary 3D visualization. Inspired by applications of computer vision in sports analysis, such as the techniques demonstrated in [Computer Vision for Football Analysis in Python with Yolov8 & OpenCV - YouTube](https://www.youtube.com/watch?v=yJWAtr3kvPU), this project explores the foundational steps of extracting pose information from video and creating a simple 3D representation.
+This Python script implements a basic pipeline for vision-based human pose estimation and rudimentary 3D visualization. Inspired by applications of computer vision, this project explores the foundational steps of extracting pose information from video and creating a simple 3D representation.
 
-The script leverages the powerful YOLOv8-pose model to detect individuals in video frames and extract 2D keypoint data.  It then takes pose data from two simulated "camera views" (processed from the same video currently) and generates a simplified 3D visualization of the human pose.
+The script leverages the powerful YOLOv11-pose model to detect individuals in video frames and extract 2D keypoint data.  It then takes pose data from two simulated "camera views" (processed from the same video currently) and generates a simplified 3D visualization of the human pose.
 
 **Key Functionalities:**
 
 *   **2D Pose Estimation (`create_pose_data`):**
-    *   Utilizes the pre-trained YOLOv8-pose model (`yolov8n-pose.pt`) for human pose detection.
+    *   Utilizes the pre-trained YOLOv11-pose model (`yolov11n-pose.pt`) for human pose detection.
     *   Processes video files using OpenCV.
     *   Detects individuals and extracts 17 keypoints (nose, eyes, ears, shoulders, elbows, wrists, hips, knees, ankles).
     *   Saves extracted 2D pose data (keypoint coordinates, confidence scores, bounding boxes) in JSON format per frame.
@@ -23,10 +23,10 @@ The script leverages the powerful YOLOv8-pose model to detect individuals in vid
 
 **Methodology - In Detail (Similar to Video Explanation):**
 
-1.  **2D Pose Detection with YOLOv8-pose:**
-    *   **Model Choice:** Employs the `yolov8n-pose.pt` model from Ultralytics YOLOv8 for its balance of speed and accuracy in pose estimation.  This pre-trained model is ready to use without requiring custom training data.
+1.  **2D Pose Detection with YOLOv11-pose:**
+    *   **Model Choice:** Employs the `yolov11n-pose.pt` model from Ultralytics YOLOv11 for its balance of speed and accuracy in pose estimation.  This pre-trained model is ready to use without requiring custom training data.
     *   **Video Input:**  The `create_pose_data` function takes a video file path as input. OpenCV handles video reading frame by frame.
-    *   **YOLOv8 Inference:** For each frame, the YOLOv8-pose model is run to detect people and their poses.
+    *   **YOLOv11 Inference:** For each frame, the YOLOv11-pose model is run to detect people and their poses.
     *   **Keypoint Extraction:** The script extracts the (x, y) coordinates and confidence of the 17 detected keypoints.
     *   **JSON Data Storage:**  The processed data for each frame (frame number, camera ID, detections including bounding boxes and keypoints) is structured and saved as a JSON file.  This structured format is designed for easy further processing, particularly for the 3D visualization step.
 
@@ -55,7 +55,7 @@ The code is organized into several key components:
 **Requirements:**
 
 *   Python 3.x
-*   Ultralytics YOLOv8 (`pip install ultralytics`)
+*   Ultralytics YOLOv11 (`pip install ultralytics`)
 *   OpenCV (`pip install opencv-python`)
 *   JSON (built-in to Python)
 *   NumPy (`pip install numpy`)

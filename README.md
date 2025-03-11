@@ -1,5 +1,5 @@
-Warning: This small Python script for video-to-3D animation is highly experimental and extremely buggy. No bug fixes are planned. Proceed at your own risk.
-This Python script implements a basic pipeline for vision-based human pose estimation and rudimentary 3D visualization. Inspired by applications of computer vision, this project explores the foundational steps of extracting pose information from video and creating a simple 3D representation.
+***Warning: This small Python script for video-to-3D animation is highly experimental and extremely buggy. No bug fixes are planned. Proceed at your own risk.
+This Python script implements a basic pipeline for vision-based human pose estimation and rudimentary 3D visualization. Inspired by applications of computer vision, this project explores the foundational steps of extracting pose information from video and creating a simple 3D representation.***
 
 The script leverages the powerful YOLOv11-pose model to detect individuals in video frames and extract 2D keypoint data.  It then takes pose data from two simulated "camera views" (processed from the same video currently) and generates a simplified 3D visualization of the human pose.
 
